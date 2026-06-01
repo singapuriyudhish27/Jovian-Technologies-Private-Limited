@@ -30,48 +30,50 @@ export default function AboutPage() {
       {/* TopNavBar */}
       <nav className="docked full-width top-0 sticky z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl border-b border-outline-variant/30 dark:border-outline/20 shadow-sm dark:shadow-none transition-all duration-300 ease-in-out">
         <div className="max-w-container-max mx-auto px-gutter flex justify-between items-center h-20">
-          <div className="font-headline-md text-headline-md font-bold text-black tracking-tighter">
+          <Link href="/" className="font-headline-md text-headline-md font-bold text-black tracking-tighter hover:text-primary transition-colors">
             Jovian Technologies
-          </div>
+          </Link>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <a
+            <Link
               className="font-body-md text-body-md text-on-surface-variant dark:text-on-surface hover:text-primary transition-all duration-300 hover:translate-x-1"
-              href="#"
+              href="/Services"
             >
               Services
-            </a>
-            <a
+            </Link>
+            <Link
               className="font-body-md text-body-md text-on-surface-variant dark:text-on-surface hover:text-primary transition-all duration-300 hover:translate-x-1"
-              href="#"
+              href="/Casestudy"
             >
               Case Studies
-            </a>
+            </Link>
             <a
               className="font-body-md text-body-md text-on-surface-variant dark:text-on-surface hover:text-primary transition-all duration-300 hover:translate-x-1"
               href="#"
             >
               Solutions
             </a>
-            <a
+            <Link
               className="font-body-md text-body-md text-on-surface-variant dark:text-on-surface hover:text-primary transition-all duration-300 hover:translate-x-1"
-              href="#"
+              href="/Techstack"
             >
               Tech Stack
-            </a>
-            <a
-              className="font-body-md text-body-md text-blue-800 dark:text-blue-500 font-semibold border-b-2 border-blue-800 dark:border-blue-500"
-              href="#"
+            </Link>
+            <Link
+              className="font-body-md text-body-md text-blue-800 dark:text-blue-500 font-semibold border-b-2 border-blue-800 dark:border-blue-500 hover:translate-x-1 transition-all duration-300"
+              href="/About"
             >
               Insights
-            </a>
+            </Link>
           </div>
 
           <div className="flex items-center gap-4">
-            <button className="bg-primary-container text-on-primary-container px-6 py-3 rounded-xl font-label-sm text-label-sm hover:brightness-110 transition-all duration-300">
-              Start a Project
-            </button>
+            <Link href="/Contact">
+              <button className="bg-primary-container text-on-primary-container px-6 py-3 rounded-xl font-label-sm text-label-sm hover:brightness-110 transition-all duration-300 cursor-pointer">
+                Start a Project
+              </button>
+            </Link>
             {/* Mobile Hamburger menu */}
             <button 
               className="md:hidden flex items-center p-2 text-on-surface dark:text-inverse-on-surface hover:text-primary transition-colors"
@@ -89,20 +91,20 @@ export default function AboutPage() {
         {mobileMenuOpen && (
           <div className="md:hidden border-t border-outline-variant/30 bg-surface dark:bg-surface-dim transition-all duration-300">
             <div className="flex flex-col p-6 gap-4">
-              <a
+              <Link
                 className="font-body-md text-body-md text-on-surface-variant dark:text-on-surface hover:text-primary transition-colors py-2"
-                href="#"
+                href="/Services"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Services
-              </a>
-              <a
+              </Link>
+              <Link
                 className="font-body-md text-body-md text-on-surface-variant dark:text-on-surface hover:text-primary transition-colors py-2"
-                href="#"
+                href="/Casestudy"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Case Studies
-              </a>
+              </Link>
               <a
                 className="font-body-md text-body-md text-on-surface-variant dark:text-on-surface hover:text-primary transition-colors py-2"
                 href="#"
@@ -110,20 +112,20 @@ export default function AboutPage() {
               >
                 Solutions
               </a>
-              <a
+              <Link
                 className="font-body-md text-body-md text-on-surface-variant dark:text-on-surface hover:text-primary transition-colors py-2"
-                href="#"
+                href="/Techstack"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Tech Stack
-              </a>
-              <a
-                className="font-body-md text-body-md text-primary dark:text-primary-fixed font-semibold border-l-2 border-primary pl-2 py-2"
-                href="#"
+              </Link>
+              <Link
+                className="font-body-md text-body-md text-blue-800 dark:text-blue-500 font-semibold border-l-2 border-blue-800 dark:border-blue-500 pl-2 py-2"
+                href="/About"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Insights
-              </a>
+              </Link>
             </div>
           </div>
         )}
