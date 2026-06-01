@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500&amp;family=Geist:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .celestial-orbit {
+            position: absolute;
+            border: 0.5px solid rgba(0, 80, 203, 0.1);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .soft-celestial-shadow {
+            box-shadow: 0px 10px 30px rgba(15, 23, 42, 0.04);
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0px 20px 40px rgba(15, 23, 42, 0.08);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#f2f4f6",
+                      "on-secondary-fixed-variant": "#574500",
+                      "primary": "#0050cb",
+                      "surface-tint": "#0054d6",
+                      "on-secondary-fixed": "#241a00",
+                      "outline": "#727687",
+                      "on-secondary-container": "#745c00",
+                      "surface-container-lowest": "#ffffff",
+                      "on-surface": "#191c1e",
+                      "on-primary-fixed-variant": "#003fa4",
+                      "surface-dim": "#d8dadc",
+                      "secondary-fixed": "#ffe088",
+                      "inverse-primary": "#b3c5ff",
+                      "on-tertiary-fixed": "#131b2e",
+                      "on-error": "#ffffff",
+                      "on-tertiary-fixed-variant": "#3f465c",
+                      "surface": "#f7f9fb",
+                      "tertiary": "#51596f",
+                      "primary-container": "#0066ff",
+                      "inverse-on-surface": "#eff1f3",
+                      "tertiary-fixed": "#dae2fd",
+                      "inverse-surface": "#2d3133",
+                      "secondary-container": "#fed65b",
+                      "secondary": "#735c00",
+                      "background": "#f7f9fb",
+                      "surface-bright": "#f7f9fb",
+                      "error-container": "#ffdad6",
+                      "outline-variant": "#c2c6d8",
+                      "on-error-container": "#93000a",
+                      "on-primary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "surface-variant": "#e0e3e5",
+                      "surface-container-high": "#e6e8ea",
+                      "on-primary-container": "#f8f7ff",
+                      "primary-fixed-dim": "#b3c5ff",
+                      "on-tertiary": "#ffffff",
+                      "primary-fixed": "#dae1ff",
+                      "surface-container": "#eceef0",
+                      "on-surface-variant": "#424656",
+                      "on-tertiary-container": "#f7f7ff",
+                      "on-background": "#191c1e",
+                      "surface-container-highest": "#e0e3e5",
+                      "secondary-fixed-dim": "#e9c349",
+                      "tertiary-fixed-dim": "#bec6e0",
+                      "tertiary-container": "#697188",
+                      "on-primary-fixed": "#001849",
+                      "on-secondary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "32px",
+                      "unit": "8px",
+                      "section-padding-mobile": "64px",
+                      "container-max": "1280px",
+                      "section-padding-desktop": "120px"
+              },
+              "fontFamily": {
+                      "label-sm": ["Geist"],
+                      "display-lg": ["Plus Jakarta Sans"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "headline-lg": ["Plus Jakarta Sans"],
+                      "body-lg": ["Inter"],
+                      "headline-lg-mobile": ["Plus Jakarta Sans"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                      "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                      "headline-md": ["30px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.7", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="docked full-width top-0 sticky z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl border-b border-outline-variant/30 dark:border-outline/20 shadow-sm dark:shadow-none transition-all duration-300 ease-in-out">
+<div class="max-w-container-max mx-auto px-gutter flex justify-between items-center h-20">
+<div class="font-headline-md text-headline-md font-bold text-on-surface dark:text-inverse-on-surface tracking-tighter">
+                Jovian Technologies
+            </div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface hover:text-primary transition-colors duration-300" href="#">Services</a>
+<a class="font-body-md text-body-md text-primary dark:text-primary-fixed font-semibold border-b-2 border-primary transition-colors duration-300" href="#">Case Studies</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface hover:text-primary transition-colors duration-300" href="#">Solutions</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface hover:text-primary transition-colors duration-300" href="#">Tech Stack</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface hover:text-primary transition-colors duration-300" href="#">Insights</a>
+</nav>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-sm text-label-sm hover:bg-primary-container transition-colors duration-300">
+                Start a Project
+            </button>
+</div>
+</header>
+<main class="relative">
+<!-- Hero Section -->
+<section class="pt-section-padding-desktop pb-16 relative overflow-hidden">
+<div class="celestial-orbit w-[800px] h-[800px] -top-[400px] -right-[200px]"></div>
+<div class="celestial-orbit w-[400px] h-[400px] top-1/2 -left-[100px]"></div>
+<div class="max-w-container-max mx-auto px-gutter relative z-10">
+<div class="max-w-3xl">
+<span class="inline-block font-label-sm text-label-sm text-primary mb-4 tracking-widest">PROVEN IMPACT</span>
+<h1 class="font-display-lg text-display-lg mb-8">Engineering efficiency through <span class="text-primary">intelligent automation.</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12">
+                        Discover how we leverage Large Language Models, RAG architectures, and custom cloud infrastructure to solve complex business bottlenecks.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Case Studies Grid -->
+<section class="pb-section-padding-desktop">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Case Study 1: AI Customer Support Agent -->
+<div class="glass-card soft-celestial-shadow rounded-xl overflow-hidden hover-lift flex flex-col border-t-2 border-t-primary">
+<div class="p-8 flex-1">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">CUSTOMER EXPERIENCE</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">AI Customer Support Agent</h3>
+<div class="space-y-6">
+<div>
+<p class="font-label-sm text-label-sm text-primary uppercase mb-1">Problem</p>
+<p class="text-on-surface-variant">Scaling support for 50k+ monthly users with a 12-hour response lag during peak loads.</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-primary uppercase mb-1">Solution</p>
+<p class="text-on-surface-variant">Deployed an autonomous LLM-powered agent with multi-turn reasoning and tool-calling capabilities.</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-primary uppercase mb-1">Technologies</p>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="px-2 py-1 bg-surface-container text-on-surface-variant text-[10px] font-bold rounded">GPT-4o</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface-variant text-[10px] font-bold rounded">Python</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface-variant text-[10px] font-bold rounded">FastAPI</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-8 bg-primary/5 border-t border-outline-variant/30">
+<p class="font-label-sm text-label-sm text-primary uppercase mb-1">Outcome</p>
+<p class="font-headline-md text-primary font-bold">85% Automated</p>
+<p class="text-sm text-on-surface-variant">Reduction in human-handled tickets within 30 days.</p>
+</div>
+</div>
+<!-- Case Study 2: RAG Knowledge Assistant -->
+<div class="glass-card soft-celestial-shadow rounded-xl overflow-hidden hover-lift flex flex-col">
+<div class="p-8 flex-1">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">neurology</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">KNOWLEDGE MANAGEMENT</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">RAG Knowledge Assistant</h3>
+<div class="space-y-6">
+<div>
+<p class="font-label-sm text-label-sm text-primary uppercase mb-1">Problem</p>
+<p class="text-on-surface-variant">Engineers spending 20% of their time searching for technical specs across fragmented internal docs.</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-primary uppercase mb-1">Solution</p>
+<p class="text-on-surface-variant">Built a semantic search engine using Vector DBs to retrieve context for LLM generation.</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-primary uppercase mb-1">Technologies</p>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="px-2 py-1 bg-surface-container text-on-surface-variant text-[10px] font-bold rounded">Pinecone</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface-variant text-[10px] font-bold rounded">LangChain</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface-variant text-[10px] font-bold rounded">Azure AI</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-8 bg-primary/5 border-t border-outline-variant/30">
+<p class="font-label-sm text-label-sm text-primary uppercase mb-1">Outcome</p>
+<p class="font-headline-md text-primary font-bold">3.2min Average</p>
+<p class="text-sm text-on-surface-variant">Saved per information request across 200+ employees.</p>
+</div>
+</div>
+<!-- Case Study 3: WhatsApp Lead Automation System -->
+<div class="glass-card soft-celestial-shadow rounded-xl overflow-hidden hover-lift flex flex-col">
+<div class="p-8 flex-1">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">SALES AUTOMATION</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">WhatsApp Lead Automation</h3>
+<div class="space-y-6">
+<div>
+<p class="font-label-sm text-label-sm text-primary uppercase mb-1">Problem</p>
+<p class="text-on-surface-variant">Lead qualification process was manual and suffered from high drop-off rates on mobile messaging.</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-primary uppercase mb-1">Solution</p>
+<p class="text-on-surface-variant">Real-time conversational qualifier with CRM sync and instant appointment booking.</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-primary uppercase mb-1">Technologies</p>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="px-2 py-1 bg-surface-container text-on-surface-variant text-[10px] font-bold rounded">Twilio API</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface-variant text-[10px] font-bold rounded">Node.js</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface-variant text-[10px] font-bold rounded">Make.com</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-8 bg-primary/5 border-t border-outline-variant/30">
+<p class="font-label-sm text-label-sm text-primary uppercase mb-1">Outcome</p>
+<p class="font-headline-md text-primary font-bold">400% ROI</p>
+<p class="text-sm text-on-surface-variant">Increase in qualified sales appointments within 60 days.</p>
+</div>
+</div>
+<!-- Case Study 4: CRM Workflow Automation -->
+<div class="glass-card soft-celestial-shadow rounded-xl overflow-hidden hover-lift flex flex-col">
+<div class="p-8 flex-1">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">rebase_edit</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">OPERATIONS</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">CRM Workflow Automation</h3>
+<div class="space-y-6">
+<div>
+<p class="font-label-sm text-label-sm text-primary uppercase mb-1">Problem</p>
+<p class="text-on-surface-variant">Inconsistent data entry and manual follow-ups led to a 15% loss in potential renewals.</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-primary uppercase mb-1">Solution</p>
+<p class="text-on-surface-variant">End-to-end event-driven architecture to automate lead distribution and nurturing cycles.</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-primary uppercase mb-1">Technologies</p>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="px-2 py-1 bg-surface-container text-on-surface-variant text-[10px] font-bold rounded">Salesforce</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface-variant text-[10px] font-bold rounded">Zapier</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface-variant text-[10px] font-bold rounded">SQL</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-8 bg-primary/5 border-t border-outline-variant/30">
+<p class="font-label-sm text-label-sm text-primary uppercase mb-1">Outcome</p>
+<p class="font-headline-md text-primary font-bold">Zero Leaks</p>
+<p class="text-sm text-on-surface-variant">100% lead follow-up compliance achieved through automation.</p>
+</div>
+</div>
+<!-- Case Study 5: AI Email Processing System -->
+<div class="glass-card soft-celestial-shadow rounded-xl overflow-hidden hover-lift flex flex-col">
+<div class="p-8 flex-1">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">mail</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">DATA PROCESSING</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">AI Email Processing System</h3>
+<div class="space-y-6">
+<div>
+<p class="font-label-sm text-label-sm text-primary uppercase mb-1">Problem</p>
+<p class="text-on-surface-variant">Financial firm receiving 10k+ invoices/forms via email needing manual OCR and entry.</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-primary uppercase mb-1">Solution</p>
+<p class="text-on-surface-variant">Vision-LLM pipeline for unstructured data extraction and automated ledger reconciliation.</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-primary uppercase mb-1">Technologies</p>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="px-2 py-1 bg-surface-container text-on-surface-variant text-[10px] font-bold rounded">Claude 3.5 Sonnet</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface-variant text-[10px] font-bold rounded">AWS Lambda</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface-variant text-[10px] font-bold rounded">React</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-8 bg-primary/5 border-t border-outline-variant/30">
+<p class="font-label-sm text-label-sm text-primary uppercase mb-1">Outcome</p>
+<p class="font-headline-md text-primary font-bold">99.8% Accuracy</p>
+<p class="text-sm text-on-surface-variant">Extraction precision, exceeding human manual entry standards.</p>
+</div>
+</div>
+<!-- Case Study 6: Business Dashboard & Admin Panel -->
+<div class="glass-card soft-celestial-shadow rounded-xl overflow-hidden hover-lift flex flex-col border-b-2 border-b-primary/40">
+<div class="p-8 flex-1">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">dashboard_customize</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">DATA VISUALIZATION</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Business Dashboard &amp; Admin</h3>
+<div class="space-y-6">
+<div>
+<p class="font-label-sm text-label-sm text-primary uppercase mb-1">Problem</p>
+<p class="text-on-surface-variant">Leadership lacked real-time visibility into AI performance and operational efficiency.</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-primary uppercase mb-1">Solution</p>
+<p class="text-on-surface-variant">Custom multi-tenant analytics platform with predictive forecasting and cost tracking.</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-primary uppercase mb-1">Technologies</p>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="px-2 py-1 bg-surface-container text-on-surface-variant text-[10px] font-bold rounded">Next.js 14</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface-variant text-[10px] font-bold rounded">D3.js</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface-variant text-[10px] font-bold rounded">Supabase</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-8 bg-primary/5 border-t border-outline-variant/30">
+<p class="font-label-sm text-label-sm text-primary uppercase mb-1">Outcome</p>
+<p class="font-headline-md text-primary font-bold">14ms Latency</p>
+<p class="text-sm text-on-surface-variant">Real-time data synchronization across globally distributed teams.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-section-padding-desktop bg-surface-container-low border-y border-outline-variant/30">
+<div class="max-w-container-max mx-auto px-gutter text-center">
+<h2 class="font-headline-lg text-headline-lg mb-6">Ready to automate your excellence?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">
+                    Join the league of forward-thinking enterprises leveraging our high-precision AI solutions.
+                </p>
+<div class="flex flex-col md:flex-row gap-4 justify-center">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-lg font-label-sm text-label-sm hover:shadow-[0_0_20px_rgba(0,102,255,0.3)] transition-all">
+                        BOOK A DISCOVERY CALL
+                    </button>
+<button class="border border-outline-variant text-on-surface px-10 py-4 rounded-lg font-label-sm text-label-sm hover:border-primary transition-all">
+                        EXPLORE SOLUTIONS
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="full-width bg-surface-container-lowest dark:bg-surface-container-high border-t border-outline-variant/50 transition-opacity duration-500">
+<div class="max-w-container-max mx-auto px-gutter py-section-padding-desktop grid grid-cols-1 md:grid-cols-4 gap-12">
+<div>
+<span class="font-headline-md text-headline-md font-bold text-on-surface dark:text-inverse-on-surface tracking-tight mb-4 block">
+                    Jovian Technologies
+                </span>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-on-tertiary-fixed-variant">
+                    Architecting the future of corporate intelligence with precision-engineered AI systems.
+                </p>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-primary mb-6">SERVICES</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="#">Automation Strategy</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="#">Machine Learning</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="#">Cloud Infrastructure</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-primary mb-6">TECH STACK</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="#">PyTorch</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="#">TensorFlow</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="#">Kubernetes</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-primary mb-6">RESOURCES</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="#">Contact Support</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="#">Privacy Policy</a></li>
+<li class="font-body-md text-body-md text-on-surface-variant pt-4">
+                        © 2024 Jovian Technologies. All rights reserved.
+                    </li>
+</ul>
+</div>
+</div>
+</footer>
+<script>
+        // Subtle Mouse Orbit Effect
+        document.addEventListener('mousemove', (e) => {
+            const orbits = document.querySelectorAll('.celestial-orbit');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            orbits.forEach((orbit, index) => {
+                const speed = (index + 1) * 10;
+                orbit.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Services | Jovian Technologies</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500&amp;family=Geist:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f2f4f6",
+                        "on-secondary-fixed-variant": "#574500",
+                        "primary": "#0050cb",
+                        "surface-tint": "#0054d6",
+                        "on-secondary-fixed": "#241a00",
+                        "outline": "#727687",
+                        "on-secondary-container": "#745c00",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#191c1e",
+                        "on-primary-fixed-variant": "#003fa4",
+                        "surface-dim": "#d8dadc",
+                        "secondary-fixed": "#ffe088",
+                        "inverse-primary": "#b3c5ff",
+                        "on-tertiary-fixed": "#131b2e",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#3f465c",
+                        "surface": "#f7f9fb",
+                        "tertiary": "#51596f",
+                        "primary-container": "#0066ff",
+                        "inverse-on-surface": "#eff1f3",
+                        "tertiary-fixed": "#dae2fd",
+                        "inverse-surface": "#2d3133",
+                        "secondary-container": "#fed65b",
+                        "secondary": "#735c00",
+                        "background": "#f7f9fb",
+                        "surface-bright": "#f7f9fb",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#c2c6d8",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e0e3e5",
+                        "surface-container-high": "#e6e8ea",
+                        "on-primary-container": "#f8f7ff",
+                        "primary-fixed-dim": "#b3c5ff",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#dae1ff",
+                        "surface-container": "#eceef0",
+                        "on-surface-variant": "#424656",
+                        "on-tertiary-container": "#f7f7ff",
+                        "on-background": "#191c1e",
+                        "surface-container-highest": "#e0e3e5",
+                        "secondary-fixed-dim": "#e9c349",
+                        "tertiary-fixed-dim": "#bec6e0",
+                        "tertiary-container": "#697188",
+                        "on-primary-fixed": "#001849",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "32px",
+                        "unit": "8px",
+                        "section-padding-mobile": "64px",
+                        "container-max": "1280px",
+                        "section-padding-desktop": "120px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Geist"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "headline-md": ["30px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.7", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .soft-celestial-shadow {
+            box-shadow: 0px 10px 30px rgba(15, 23, 42, 0.04);
+        }
+        .orbital-path {
+            border: 0.5px solid rgba(0, 80, 203, 0.1);
+            border-radius: 50%;
+            position: absolute;
+            pointer-events: none;
+        }
+        .glass-header {
+            backdrop-filter: blur(20px);
+            background-color: rgba(255, 255, 255, 0.8);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<header class="docked full-width top-0 sticky z-50 glass-header">
+<div class="max-w-container-max mx-auto px-gutter flex justify-between items-center h-20">
+<a class="font-headline-md text-headline-md font-bold text-on-surface tracking-tighter" href="/">
+                Jovian Technologies
+            </a>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Case Studies</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Solutions</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Tech Stack</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Insights</a>
+</nav>
+<button class="bg-primary text-on-primary px-6 py-3 rounded font-body-md text-body-md font-semibold hover:bg-primary-container transition-all duration-300">
+                Start a Project
+            </button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative overflow-hidden pt-section-padding-desktop pb-24 bg-surface-container-lowest">
+<div class="orbital-path w-[600px] h-[600px] -top-40 -right-40"></div>
+<div class="orbital-path w-[400px] h-[400px] -top-20 -right-20"></div>
+<div class="max-w-container-max mx-auto px-gutter relative z-10">
+<div class="max-w-3xl">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-4 block">Our Expertise</span>
+<h1 class="font-display-lg text-display-lg mb-8">Architecting the <span class="text-primary">Next Intelligence</span>.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                        From custom RAG implementations to sophisticated WhatsApp automation flows, we build the technical infrastructure that scales human potential through Jovian-grade precision.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Bento Grid Services -->
+<section class="py-section-padding-desktop">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- AI Agents (Large Highlight) -->
+<div class="md:col-span-8 group bg-white border border-outline-variant/30 rounded-xl p-10 soft-celestial-shadow hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-12">
+<span class="material-symbols-outlined text-primary text-5xl" data-icon="smart_toy">smart_toy</span>
+<span class="text-secondary font-label-sm text-label-sm border border-secondary/20 px-3 py-1 rounded-full">FLAGSHIP</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-4">Autonomous AI Agents</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-xl">Sophisticated digital entities capable of reasoning, planning, and executing complex workflows across your existing tech stack without human intervention.</p>
+<div class="grid md:grid-cols-2 gap-8 mb-12">
+<div>
+<h4 class="font-label-sm text-label-sm text-on-surface font-bold uppercase mb-3">Problems Solved</h4>
+<ul class="space-y-2 font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> Manual data entry fatigue</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> Slow response times</li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-on-surface font-bold uppercase mb-3">Use Cases</h4>
+<ul class="space-y-2 font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> 24/7 Technical Support</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Automated Lead Prospecting</li>
+</ul>
+</div>
+</div>
+</div>
+<button class="flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all">
+                            Get Started <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- RAG Systems -->
+<div class="md:col-span-4 bg-white border border-outline-variant/30 rounded-xl p-10 soft-celestial-shadow hover:-translate-y-1 transition-all duration-300">
+<span class="material-symbols-outlined text-primary text-4xl mb-8" data-icon="database">database</span>
+<h3 class="font-headline-md text-headline-md mb-4">RAG Systems</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Retrieval-Augmented Generation to turn your company docs into an interactive knowledge base.</p>
+<div class="border-t border-outline-variant/20 pt-6 mt-6">
+<h4 class="font-label-sm text-label-sm text-on-surface font-bold uppercase mb-2">Problem Solved</h4>
+<p class="text-sm text-on-surface-variant">Hallucinations in LLMs and outdated information silos.</p>
+</div>
+<button class="mt-8 text-primary font-bold inline-flex items-center gap-2">Configure <span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span></button>
+</div>
+<!-- AI App Dev -->
+<div class="md:col-span-4 bg-white border border-outline-variant/30 rounded-xl p-10 soft-celestial-shadow hover:-translate-y-1 transition-all duration-300">
+<span class="material-symbols-outlined text-primary text-4xl mb-8" data-icon="developer_mode_tv">developer_mode_tv</span>
+<h3 class="font-headline-md text-headline-md mb-4">AI App Dev</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Custom-built applications with native AI integration from day one.</p>
+<div class="flex gap-2 mb-6 flex-wrap">
+<span class="bg-surface-container-low px-3 py-1 text-xs rounded-full">Python</span>
+<span class="bg-surface-container-low px-3 py-1 text-xs rounded-full">OpenAI</span>
+<span class="bg-surface-container-low px-3 py-1 text-xs rounded-full">LangChain</span>
+</div>
+<button class="text-primary font-bold inline-flex items-center gap-2">Learn More <span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span></button>
+</div>
+<!-- Business Automation -->
+<div class="md:col-span-8 bg-surface-container-low border border-outline-variant/10 rounded-xl p-10 flex flex-col md:flex-row gap-10 items-center overflow-hidden">
+<div class="md:w-1/2">
+<h3 class="font-headline-lg text-headline-lg mb-4">Enterprise Automation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">We stitch together your CRM, Email, and Cloud infrastructure into a seamless, self-healing ecosystem.</p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary" data-icon="hub">hub</span>
+<div>
+<p class="font-bold">n8n &amp; Zapier Flows</p>
+<p class="text-sm text-on-surface-variant">Complex multi-step logic triggers.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary" data-icon="chat">chat</span>
+<div>
+<p class="font-bold">WhatsApp &amp; CRM Sync</p>
+<p class="text-sm text-on-surface-variant">Instant lead injection and nurturing.</p>
+</div>
+</li>
+</ul>
+<button class="bg-primary text-on-primary px-6 py-3 rounded font-bold">Automate Workflows</button>
+</div>
+<div class="md:w-1/2 relative h-full min-h-[300px] w-full">
+<img alt="Automation Dashboard" class="rounded-lg shadow-2xl absolute -right-20 top-0 w-[120%]" data-alt="A clean, high-fidelity user interface showing a complex node-based automation workflow. The screen features sleek connectors and glowing status indicators in a palette of primary blues and secondary golds. The background is a minimalist, brightly lit workspace, maintaining a premium corporate tech aesthetic with soft shadows and sharp typography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHDTvQigB3lTCBdp8pZF29xB4HiduR1D1DnQdnI2yZFW5CLzVopr5wdiO7It613xG2sD7XgeNGDEUOlNLMnChd0Ea_r8ENDrBOOipz8Ma6uOGlNTaidM1YlmaGzykqdpHjuOUiwJNkYsWjBEee13ZXciK-oXBKiuW-DDhEnaMMjkCM_f_B-HL1lfeZFeTcusFWRv0YnG9CfspjuCqFPHAxxIdfn1IoqKX1tYz7yIWclqzp_ZSNd1GOZdptnGBeRJKWeO4FrT-6zHk"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Detailed Services Grid -->
+<section class="py-section-padding-desktop bg-surface">
+<div class="max-w-container-max mx-auto px-gutter text-center mb-20">
+<h2 class="font-headline-lg text-headline-lg mb-4">Specialized Tech Solutions</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Precision engineering across every layer of your digital presence.</p>
+</div>
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- WhatsApp Automation -->
+<div class="bg-white p-8 rounded-lg border border-outline-variant/30 hover:shadow-lg transition-all border-t-4 border-t-primary">
+<span class="material-symbols-outlined text-primary mb-4" data-icon="campaign">campaign</span>
+<h4 class="font-headline-md text-headline-md mb-2">WhatsApp Automation</h4>
+<p class="text-on-surface-variant mb-6">Convert leads instantly on the world's most popular messaging app.</p>
+<ul class="text-sm space-y-2 text-on-surface-variant mb-8">
+<li>• Automated Appointment Booking</li>
+<li>• Transactional Notifications</li>
+<li>• AI-powered Chat Support</li>
+</ul>
+<button class="text-primary font-bold text-sm">View Demo →</button>
+</div>
+<!-- Custom Software -->
+<div class="bg-white p-8 rounded-lg border border-outline-variant/30 hover:shadow-lg transition-all border-t-4 border-t-secondary">
+<span class="material-symbols-outlined text-secondary mb-4" data-icon="code_blocks">code_blocks</span>
+<h4 class="font-headline-md text-headline-md mb-2">Custom Software</h4>
+<p class="text-on-surface-variant mb-6">Bespoke platforms built with scalability and security at the core.</p>
+<ul class="text-sm space-y-2 text-on-surface-variant mb-8">
+<li>• Cloud-Native Architectures</li>
+<li>• Legacy Migration</li>
+<li>• High-Performance APIs</li>
+</ul>
+<button class="text-primary font-bold text-sm">Case Studies →</button>
+</div>
+<!-- CRM Automation -->
+<div class="bg-white p-8 rounded-lg border border-outline-variant/30 hover:shadow-lg transition-all border-t-4 border-t-primary">
+<span class="material-symbols-outlined text-primary mb-4" data-icon="groups">groups</span>
+<h4 class="font-headline-md text-headline-md mb-2">CRM Automation</h4>
+<p class="text-on-surface-variant mb-6">Eliminate data silos between HubSpot, Salesforce, or custom CRMs.</p>
+<ul class="text-sm space-y-2 text-on-surface-variant mb-8">
+<li>• Bi-directional Syncing</li>
+<li>• Predictive Lead Scoring</li>
+<li>• Automated Sales Pipelines</li>
+</ul>
+<button class="text-primary font-bold text-sm">Optimize CRM →</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="py-section-padding-desktop">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="bg-primary p-16 rounded-3xl relative overflow-hidden text-center">
+<div class="orbital-path w-[800px] h-[800px] -bottom-[400px] -left-[400px] border-white/10"></div>
+<div class="relative z-10 max-w-2xl mx-auto">
+<h2 class="font-display-lg text-4xl md:text-5xl text-on-primary mb-6">Ready to automate your excellence?</h2>
+<p class="text-on-primary/80 mb-10 text-lg">Join forward-thinking enterprises leveraging Jovian Technologies to reclaim their time and scale without friction.</p>
+<div class="flex flex-col md:flex-row justify-center gap-4">
+<button class="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-lg font-bold text-lg hover:shadow-gold transition-shadow">Schedule Discovery Call</button>
+<button class="bg-transparent border border-on-primary text-on-primary px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-colors">Download Service Pack</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-high border-t border-outline-variant/50 full-width">
+<div class="max-w-container-max mx-auto px-gutter py-section-padding-desktop grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1">
+<span class="font-headline-md text-headline-md font-bold text-on-surface dark:text-inverse-on-surface tracking-tight mb-4 block">Jovian Technologies</span>
+<p class="text-on-surface-variant font-body-md text-body-md">Precision AI and automation consulting for the modern enterprise.</p>
+</div>
+<div>
+<h5 class="font-bold mb-6">Services</h5>
+<ul class="space-y-4 font-body-md text-body-md">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">Automation Strategy</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">Machine Learning</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">Cloud Infrastructure</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-6">Stack</h5>
+<ul class="space-y-4 font-body-md text-body-md">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">PyTorch</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">TensorFlow</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">Kubernetes</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-6">Legal</h5>
+<ul class="space-y-4 font-body-md text-body-md">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">Contact Support</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">Privacy Policy</a></li>
+</ul>
+<p class="mt-8 text-on-surface-variant text-sm">© 2024 Jovian Technologies. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<script>
+        // Subtle Parallax / Interaction Script
+        document.addEventListener('mousemove', (e) => {
+            const orbits = document.querySelectorAll('.orbital-path');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            orbits.forEach((orbit, index) => {
+                const speed = (index + 1) * 10;
+                orbit.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+            });
+        });
+    </script>
+</body></html>

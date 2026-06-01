@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Inter:wght@400;500&amp;family=Geist:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface-container-low": "#f2f4f6",
+                "on-secondary-fixed-variant": "#574500",
+                "primary": "#0050cb",
+                "surface-tint": "#0054d6",
+                "on-secondary-fixed": "#241a00",
+                "outline": "#727687",
+                "on-secondary-container": "#745c00",
+                "surface-container-lowest": "#ffffff",
+                "on-surface": "#191c1e",
+                "on-primary-fixed-variant": "#003fa4",
+                "surface-dim": "#d8dadc",
+                "secondary-fixed": "#ffe088",
+                "inverse-primary": "#b3c5ff",
+                "on-tertiary-fixed": "#131b2e",
+                "on-error": "#ffffff",
+                "on-tertiary-fixed-variant": "#3f465c",
+                "surface": "#f7f9fb",
+                "tertiary": "#51596f",
+                "primary-container": "#0066ff",
+                "inverse-on-surface": "#eff1f3",
+                "tertiary-fixed": "#dae2fd",
+                "inverse-surface": "#2d3133",
+                "secondary-container": "#fed65b",
+                "secondary": "#735c00",
+                "background": "#f7f9fb",
+                "surface-bright": "#f7f9fb",
+                "error-container": "#ffdad6",
+                "outline-variant": "#c2c6d8",
+                "on-error-container": "#93000a",
+                "on-primary": "#ffffff",
+                "error": "#ba1a1a",
+                "surface-variant": "#e0e3e5",
+                "surface-container-high": "#e6e8ea",
+                "on-primary-container": "#f8f7ff",
+                "primary-fixed-dim": "#b3c5ff",
+                "on-tertiary": "#ffffff",
+                "primary-fixed": "#dae1ff",
+                "surface-container": "#eceef0",
+                "on-surface-variant": "#424656",
+                "on-tertiary-container": "#f7f7ff",
+                "on-background": "#191c1e",
+                "surface-container-highest": "#e0e3e5",
+                "secondary-fixed-dim": "#e9c349",
+                "tertiary-fixed-dim": "#bec6e0",
+                "tertiary-container": "#697188",
+                "on-primary-fixed": "#001849",
+                "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "spacing": {
+                "gutter": "32px",
+                "unit": "8px",
+                "section-padding-mobile": "64px",
+                "container-max": "1280px",
+                "section-padding-desktop": "120px"
+            },
+            "fontFamily": {
+                "label-sm": ["Geist"],
+                "display-lg": ["Plus Jakarta Sans"],
+                "headline-md": ["Plus Jakarta Sans"],
+                "headline-lg": ["Plus Jakarta Sans"],
+                "body-lg": ["Inter"],
+                "headline-lg-mobile": ["Plus Jakarta Sans"],
+                "body-md": ["Inter"]
+            },
+            "fontSize": {
+                "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                "headline-md": ["30px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "1.7", "fontWeight": "400"}],
+                "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .soft-celestial-shadow {
+            box-shadow: 0px 10px 30px rgba(15, 23, 42, 0.04);
+        }
+        .orbital-path {
+            border: 0.5px solid rgba(114, 118, 135, 0.2);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-primary/10">
+<!-- TopNavBar -->
+<nav class="docked full-width top-0 sticky z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl border-b border-outline-variant/30 dark:border-outline/20 shadow-sm dark:shadow-none transition-all duration-300 ease-in-out">
+<div class="max-w-container-max mx-auto px-gutter flex justify-between items-center h-20">
+<div class="font-headline-md text-headline-md font-bold text-on-surface dark:text-inverse-on-surface tracking-tighter">
+                Jovian Technologies
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface hover:text-primary transition-colors duration-300" href="#">Services</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface hover:text-primary transition-colors duration-300" href="#">Case Studies</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface hover:text-primary transition-colors duration-300" href="#">Solutions</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface hover:text-primary transition-colors duration-300" href="#">Tech Stack</a>
+<a class="font-body-md text-body-md text-primary dark:text-primary-fixed font-semibold border-b-2 border-primary" href="#">Insights</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-3 rounded-xl font-label-sm text-label-sm hover:brightness-110 transition-all duration-300">
+                Start a Project
+            </button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative overflow-hidden pt-section-padding-desktop pb-section-padding-desktop bg-surface-container-lowest">
+<div class="absolute top-0 right-0 w-[600px] h-[600px] orbital-path translate-x-1/2 -translate-y-1/2 opacity-30 pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 w-[400px] h-[400px] orbital-path -translate-x-1/4 translate-y-1/4 opacity-20 pointer-events-none"></div>
+<div class="max-w-container-max mx-auto px-gutter relative z-10">
+<div class="max-w-3xl">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-6 block">Our Identity</span>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-8">Engineering Clarity in an Era of Complexity.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        Jovian Technologies is built with a practical belief: businesses do not need AI for hype. They need systems that save time, reduce manual work, and improve execution.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Founder Section (Bento Inspired) -->
+<section class="py-section-padding-desktop bg-surface">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+<div class="md:col-span-5 relative group overflow-hidden rounded-xl bg-white soft-celestial-shadow">
+<img alt="YUDHISH SINGAPURI" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" data-alt="A professional close-up portrait of a tech founder with a visionary expression, set against a minimalist architectural background with soft natural lighting. The aesthetic is clean and corporate, featuring a monochromatic palette with subtle warm skin tones. The image captures a sense of authority and forward-thinking leadership in a high-end light-mode environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHwBDlo7Mj-qN4-kcK0YXd_Ij9lvt-fRhkE_xPQhp2GJP63-2zCZsrZsZ1VlecOI-goid3yVIN7o4Rb-CMLmwQzur26Rbhy6VSPI-spP3ioURajvi-kEcFbfAzGNEXHfAerhok1qNCs7rlK4k2Y9RVYdm386TJtThqDteakm0dE6zylSoMJ1hRfwtNuVPQjvA01gQqBLm8ejd80SQYc3j-g79uQSB1rebMVhRf9iDikxXkihAttM7HhGE2wXx3LjZCVVntgR0Iuj8"/>
+<div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent">
+<h3 class="font-headline-md text-white">YUDHISH SINGAPURI</h3>
+<p class="text-white/80 font-label-sm tracking-wider">FOUNDER, JOVIAN TECHNOLOGIES</p>
+</div>
+</div>
+<div class="md:col-span-7 flex flex-col justify-center gap-12 p-12 bg-white rounded-xl border border-outline-variant/30 soft-celestial-shadow relative">
+<div class="absolute top-8 right-8 text-primary/10">
+<span class="material-symbols-outlined text-8xl" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+</div>
+<div>
+<h2 class="font-headline-lg text-on-surface mb-6">Founder's Philosophy</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6 italic leading-relaxed">
+                                "We are moving past the 'magical' phase of AI. My goal for Jovian is to ground this technology in operational reality. We build tools that don't just 'think' but 'do'—integrating seamlessly into the workflows that keep your business alive."
+                            </p>
+<div class="flex gap-4">
+<div class="w-12 h-1 border-t-2 border-secondary self-center"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">THE VISION FOR JOVIAN</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Vision, Mission, Approach (Asymmetric Grid) -->
+<section class="py-section-padding-desktop bg-surface-container-lowest overflow-hidden relative">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
+<!-- Vision -->
+<div class="flex flex-col gap-6 p-8 border-l border-outline-variant/30 hover:border-primary transition-colors duration-500">
+<div class="bg-primary/5 w-16 h-16 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">visibility</span>
+</div>
+<h4 class="font-headline-md text-on-surface">Vision</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            To be the premier architect of autonomous business environments where human creativity is liberated from repetitive manual data processing.
+                        </p>
+</div>
+<!-- Mission -->
+<div class="flex flex-col gap-6 p-8 border-l border-outline-variant/30 hover:border-primary transition-colors duration-500 md:mt-12">
+<div class="bg-secondary/5 w-16 h-16 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-3xl">rocket_launch</span>
+</div>
+<h4 class="font-headline-md text-on-surface">Mission</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Deploying production-ready AI solutions that prioritize security, scalability, and measurable ROI for industry leaders and emerging ventures.
+                        </p>
+</div>
+<!-- Approach -->
+<div class="flex flex-col gap-6 p-8 border-l border-outline-variant/30 hover:border-primary transition-colors duration-500">
+<div class="bg-tertiary/5 w-16 h-16 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-3xl">settings_account_box</span>
+</div>
+<h4 class="font-headline-md text-on-surface">Approach</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Our implementation starts with the outcome. We reverse-engineer your bottlenecks to build tailored agents that act as a force multiplier for your existing talent.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Modern Cards: The Studio Culture -->
+<section class="py-section-padding-desktop bg-surface">
+<div class="max-w-container-max mx-auto px-gutter text-center mb-16">
+<span class="font-label-sm text-label-sm text-primary uppercase mb-4 block">The Studio</span>
+<h2 class="font-headline-lg text-on-surface">Where Precision Meets Innovation</h2>
+</div>
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-white p-12 rounded-xl border border-outline-variant/30 soft-celestial-shadow flex items-start gap-8 group">
+<div class="w-1 bg-secondary h-full group-hover:h-12 transition-all duration-500"></div>
+<div>
+<h5 class="font-headline-md text-on-surface mb-4">Founder-Led Agility</h5>
+<p class="font-body-md text-on-surface-variant">
+                            Unlike traditional agencies, we operate as a nimble studio. Every project is overseen by our founder, ensuring that high-level strategy isn't lost in translation through layers of management.
+                        </p>
+</div>
+</div>
+<div class="bg-white p-12 rounded-xl border border-outline-variant/30 soft-celestial-shadow flex items-start gap-8 group">
+<div class="w-1 bg-primary h-full group-hover:h-12 transition-all duration-500"></div>
+<div>
+<h5 class="font-headline-md text-on-surface mb-4">Pragmatic Tech Stack</h5>
+<p class="font-body-md text-on-surface-variant">
+                            We don't chase the newest libraries unless they solve the problem. Our tech stack is built for durability, using PyTorch and Cloud Infrastructure that enterprise IT can actually support.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-section-padding-desktop bg-white">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="bg-primary p-16 rounded-xl relative overflow-hidden flex flex-col items-center text-center">
+<div class="absolute inset-0 opacity-10">
+<div class="absolute w-[800px] h-[800px] orbital-path border-white -top-1/2 -left-1/4"></div>
+<div class="absolute w-[600px] h-[600px] orbital-path border-white -bottom-1/2 -right-1/4"></div>
+</div>
+<h2 class="font-display-lg text-headline-lg text-white mb-8 relative z-10 max-w-2xl">Ready to automate your execution?</h2>
+<p class="font-body-lg text-white/80 mb-12 relative z-10 max-w-xl">
+                        Let's discuss how Jovian Technologies can implement practical AI for your business operations.
+                    </p>
+<div class="flex flex-wrap gap-4 justify-center relative z-10">
+<button class="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-xl font-label-sm text-label-sm hover:brightness-105 transition-all">
+                            Book a Consultation
+                        </button>
+<button class="bg-transparent border border-white/30 text-white px-8 py-4 rounded-xl font-label-sm text-label-sm hover:bg-white/10 transition-all">
+                            View Case Studies
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-high border-t border-outline-variant/50 transition-opacity duration-500">
+<div class="max-w-container-max mx-auto px-gutter py-section-padding-desktop grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="md:col-span-1">
+<span class="font-headline-md text-headline-md font-bold text-on-surface dark:text-inverse-on-surface tracking-tight mb-4 block">Jovian Technologies</span>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Practical AI for modern business execution. Established 2024.</p>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-2">Capabilities</span>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="#">Automation Strategy</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="#">Machine Learning</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="#">Cloud Infrastructure</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-2">Ecosystem</span>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="#">PyTorch</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="#">TensorFlow</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="#">Kubernetes</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-2">Connect</span>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="#">Contact Support</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="#">Privacy Policy</a>
+<div class="flex gap-4 mt-4">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors">hub</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors">terminal</span>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter py-8 border-t border-outline-variant/30 text-center">
+<p class="font-body-md text-label-sm text-on-surface-variant opacity-60">
+                © 2024 Jovian Technologies. All rights reserved. Built for precision.
+            </p>
+</div>
+</footer>
+<script>
+        // Simple micro-interaction for orbital paths
+        window.addEventListener('scroll', () => {
+            const orbits = document.querySelectorAll('.orbital-path');
+            const scrolled = window.pageYOffset;
+            orbits.forEach((orbit, index) => {
+                const speed = 0.05 * (index + 1);
+                orbit.style.transform = `translate(${index % 2 === 0 ? '50%' : '-25%'}, ${index % 2 === 0 ? '-50%' : '25%'}) rotate(${scrolled * speed}deg)`;
+            });
+        });
+
+        // Hover effect for nav items
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                link.classList.add('translate-x-1');
+            });
+            link.addEventListener('mouseleave', () => {
+                link.classList.remove('translate-x-1');
+            });
+        });
+    </script>
+</body></html>
