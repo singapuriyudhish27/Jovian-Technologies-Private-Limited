@@ -1,0 +1,13 @@
+name: Demo WorkFlow
+
+on: 
+  push: 
+    branches: [ main ]
+
+jobs:
+  job1: 
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Greetings
+        run: echo "Job Step 1 Started"
