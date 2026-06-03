@@ -36,7 +36,7 @@ export default function HomePage() {
       <header className="docked full-width top-0 sticky z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm transition-all duration-300 ease-in-out">
         <div className="max-w-container-max mx-auto px-gutter flex justify-between items-center h-20">
           <Link href="/" className="font-headline-md text-headline-md font-bold text-on-surface tracking-tighter">
-            Jovian Technologies
+            Jovian Technologies Private Limited
           </Link>
           
           {/* Desktop Navigation */}
